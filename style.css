@@ -130,6 +130,11 @@ body {
 .btn-accent   { background: var(--accent); color: #fff; }
 .btn-accent:hover { background: #6d28d9; }
 
+.btn-demo     { background: #0ea5e9; color: #fff; position: relative; }
+.btn-demo:hover { background: #0284c7; }
+.btn-badge    { background: rgba(255,255,255,0.25); font-size: 0.7rem; font-weight: 600;
+                padding: 1px 6px; border-radius: 999px; margin-left: 6px; }
+
 /* ===== ABSTRACT ===== */
 .abstract-text {
   font-size: 1.05rem;
