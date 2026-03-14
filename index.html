@@ -154,6 +154,183 @@
   </div>
 </section>
 
+<!-- ===== DATASET SAMPLES ===== -->
+<section class="section section-alt" id="samples">
+  <div class="container">
+    <h2 class="section-title">Dataset Samples</h2>
+    <p class="section-subtitle">
+      Browsing 100 randomly selected scenarios. Each shows the CommonRoad BEV map and the CARLA rendering side by side.
+    </p>
+
+    <div class="viewer-shell">
+      <!-- counter + name -->
+      <div class="viewer-header">
+        <span class="viewer-counter" id="viewerCounter">1 / 100</span>
+        <span class="viewer-name" id="viewerName"></span>
+      </div>
+
+      <!-- images -->
+      <div class="viewer-pair">
+        <div class="viewer-img-wrap" id="wrapBEV">
+          <img id="imgBEV" src="" alt="BEV map" />
+          <span class="sample-tag">CommonRoad BEV</span>
+          <div class="zoom-controls">
+            <button onclick="zoom('BEV',1.25)" title="Zoom in">+</button>
+            <button onclick="zoom('BEV',0.8)" title="Zoom out">−</button>
+            <button onclick="rotate('BEV',-90)" title="Rotate left">↺</button>
+            <button onclick="rotate('BEV', 90)" title="Rotate right">↻</button>
+            <button onclick="resetZoom('BEV')" title="Reset">⊙</button>
+          </div>
+        </div>
+        <div class="viewer-img-wrap" id="wrapCARLA">
+          <img id="imgCARLA" src="" alt="CARLA map" />
+          <span class="sample-tag carla">CARLA</span>
+          <div class="zoom-controls">
+            <button onclick="zoom('CARLA',1.25)" title="Zoom in">+</button>
+            <button onclick="zoom('CARLA',0.8)" title="Zoom out">−</button>
+            <button onclick="rotate('CARLA',-90)" title="Rotate left">↺</button>
+            <button onclick="rotate('CARLA', 90)" title="Rotate right">↻</button>
+            <button onclick="resetZoom('CARLA')" title="Reset">⊙</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- nav -->
+      <div class="viewer-nav">
+        <button class="viewer-btn" id="btnPrev">&#8592; Prev</button>
+        <div class="viewer-dots" id="viewerDots"></div>
+        <button class="viewer-btn" id="btnNext">Next &#8594;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  const files = ["AUT_Haag-12_1_T-4.png","AUT_Haag-13_1_T-15.png","AUT_Haag-18_1_T-46.png","AUT_Haag-32_1_T-8.png","AUT_Haag-33_1_T-1.png","CAN_Ottawa-25_1_T-17.png","AUT_Haag-82_1_T-1.png","GRC_NeaSmyrni-150_1_T-2.png","DEU_Heilbronn-270_1_T-13.png","DEU_Heilbronn-223_1_T-11.png","DEU_Heilbronn-179_1_T-2.png","DEU_Arnstadt-101_1_T-4.png","GRC_NeaSmyrni-147_1_T-2.png","BRA_VilaVelha-91_1_T-1.png","GRC_ArchaioLimani-39_1_T-1.png","GRC_NeaSmyrni-2_1_T-8.png","DEU_Memmingen-67_1_T-3.png","BRA_VilaVelha-60_1_T-1.png","DEU_Schwetzingen-36_1_T-2.png","DEU_Herzogenaurach-22_1_T-9.png","BRA_BeloHorizonte-14_1_T-10.png","BRA_BeloHorizonte-12_1_T-4.png","BRA_VilaVelha-66_1_T-11.png","DEU_Heilbronn-162_1_T-1.png","DEU_Heilbronn-206_1_T-2.png","DEU_Lengede-21_1_T-10.png","DEU_Weimar-45_1_T-1.png","AUT_Haag-84_1_T-5.png","DEU_Salzwedel-43_1_T-14.png","DEU_Heilbronn-138_1_T-6.png","GRC_ArchaioLimani-95_1_T-21.png","GRC_ArchaioLimani-105_1_T-10.png","GRC_ArchaioLimani-74_1_T-1.png","GRC_NeaSmyrni-158_1_T-1.png","DEU_Herzogenaurach-197_1_T-3.png","DEU_Heilbronn-163_1_T-8.png","DEU_Herzogenaurach-64_1_T-11.png","DEU_Schwetzingen-2_1_T-5.png","DEU_Heilbronn-272_1_T-4.png","AUT_Haag-30_1_T-1.png","DEU_BadAibling-1_1_T-9.png","GRC_NeaSmyrni-148_1_T-3.png","DEU_Heilbronn-7_1_T-1.png","GRC_ArchaioLimani-86_1_T-1.png","DEU_Arnstadt-96_1_T-1.png","DEU_Heilbronn-156_1_T-2.png","DEU_Heilbronn-63_1_T-10.png","GRC_NeaSmyrni-161_1_T-10.png","GRC_NeaSmyrni-13_1_T-5.png","DEU_Herzogenaurach-129_1_T-3.png","BRA_VilaVelha-70_1_T-3.png","DEU_Heilbronn-9_1_T-1.png","DEU_Heilbronn-88_1_T-3.png","DEU_Weimar-59_1_T-1.png","DEU_Heilbronn-254_1_T-2.png","BRA_BeloHorizonte-9_1_T-14.png","DEU_Herzogenaurach-74_1_T-19.png","DEU_Memmingen-188_1_T-3.png","CAN_Ottawa-49_1_T-20.png","DEU_Herzogenaurach-128_1_T-13.png","BRA_VilaVelha-48_1_T-3.png","DEU_Memmingen-97_1_T-3.png","DEU_Heilbronn-301_1_T-11.png","ECU_Quito-34_1_T-2.png","DEU_Wolfsburg-74_1_T-1.png","DEU_Herzogenaurach-106_1_T-4.png","DEU_Schwetzingen-150_1_T-9.png","DEU_Heilbronn-134_1_T-4.png","BRA_VilaVelha-33_1_T-2.png","BRA_VilaVelha-101_1_T-17.png","DEU_Heilbronn-188_1_T-4.png","GRC_ArchaioLimani-144_1_T-1.png","GRC_NeaSmyrni-123_1_T-10.png","BRA_VilaVelha-90_1_T-1.png","GRC_ArchaioLimani-46_1_T-1.png","GRC_ArchaioLimani-5_1_T-1.png","DEU_Herzogenaurach-67_1_T-19.png","DEU_Herzogenaurach-107_1_T-11.png","DEU_Bebra-39_1_T-1.png","DEU_Herzogenaurach-113_1_T-19.png","DEU_Heilbronn-98_1_T-4.png","DEU_Heilbronn-149_1_T-12.png","DEU_Heilbronn-256_1_T-3.png","BRA_VilaVelha-3_1_T-5.png","DEU_Weimar-78_1_T-1.png","DEU_Damme-57_1_T-18.png","DEU_Memmingen-175_1_T-2.png","GRC_NeaSmyrni-19_1_T-11.png","DEU_Herzogenaurach-78_1_T-10.png","DEU_Heilbronn-269_1_T-3.png","DEU_Salzwedel-28_1_T-4.png","GRC_ArchaioLimani-83_1_T-6.png","BRA_VilaVelha-117_1_T-12.png","DEU_Heilbronn-195_1_T-11.png","GRC_NeaSmyrni-162_1_T-1.png","DEU_Heilbronn-343_1_T-5.png","DEU_Herzogenaurach-175_1_T-17.png","DEU_Heilbronn-257_1_T-24.png","BRA_VilaVelha-23_1_T-10.png","DEU_Heilbronn-151_1_T-23.png"];
+
+  let idx = 0;
+
+  function show(i) {
+    idx = (i + files.length) % files.length;
+    const f = files[idx];
+    document.getElementById('imgBEV').src   = 'homepage/commonroad_map/' + f;
+    document.getElementById('imgCARLA').src = 'homepage/carla_map/' + f;
+    document.getElementById('viewerName').textContent = f.replace('.png','');
+    document.getElementById('viewerCounter').textContent = (idx + 1) + ' / ' + files.length;
+    // update dots
+    document.querySelectorAll('.vdot').forEach((d, j) => d.classList.toggle('active', j === idx));
+  }
+
+  // build dots (show 10 at a time around current)
+  const dotsEl = document.getElementById('viewerDots');
+  for (let i = 0; i < files.length; i++) {
+    const d = document.createElement('button');
+    d.className = 'vdot';
+    d.title = files[i].replace('.png','');
+    d.onclick = () => show(i);
+    dotsEl.appendChild(d);
+  }
+
+  document.getElementById('btnPrev').onclick = () => show(idx - 1);
+  document.getElementById('btnNext').onclick = () => show(idx + 1);
+
+  // keyboard nav
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft')  show(idx - 1);
+    if (e.key === 'ArrowRight') show(idx + 1);
+  });
+
+  show(0);
+})();
+
+// ── Zoom & Pan ──────────────────────────────────────────────
+const _z = {
+  BEV:   { scale: 1, tx: 0, ty: 0, rot: 0, flipY: 1,  dragging: false, sx: 0, sy: 0 },
+  CARLA: { scale: 1, tx: 0, ty: 0, rot: 0, flipY: -1, dragging: false, sx: 0, sy: 0 }
+};
+
+function applyTransform(key) {
+  const s = _z[key];
+  document.getElementById('img' + key).style.transform =
+    `translate(${s.tx}px, ${s.ty}px) rotate(${s.rot}deg) scale(${s.scale}) scaleY(${s.flipY})`;
+}
+
+function zoom(key, factor) {
+  const s = _z[key];
+  s.scale = Math.min(Math.max(s.scale * factor, 0.5), 8);
+  applyTransform(key);
+}
+
+function rotate(key, deg) {
+  _z[key].rot = (_z[key].rot + deg + 360) % 360;
+  applyTransform(key);
+}
+
+function resetZoom(key) {
+  const defaultFlip = key === 'CARLA' ? -1 : 1;
+  _z[key].scale = 1; _z[key].tx = 0; _z[key].ty = 0; _z[key].rot = 0; _z[key].flipY = defaultFlip;
+  applyTransform(key);
+}
+
+['BEV','CARLA'].forEach(key => {
+  const wrap = document.getElementById('wrap' + key);
+  const img  = document.getElementById('img'  + key);
+  const s    = _z[key];
+
+  // scroll wheel zoom
+  wrap.addEventListener('wheel', e => {
+    e.preventDefault();
+    zoom(key, e.deltaY < 0 ? 1.1 : 0.9);
+  }, { passive: false });
+
+  // drag to pan
+  wrap.addEventListener('mousedown', e => {
+    if (e.button !== 0) return;
+    s.dragging = true; s.sx = e.clientX - s.tx; s.sy = e.clientY - s.ty;
+    wrap.style.cursor = 'grabbing';
+  });
+  window.addEventListener('mousemove', e => {
+    if (!s.dragging) return;
+    s.tx = e.clientX - s.sx; s.ty = e.clientY - s.sy;
+    applyTransform(key);
+  });
+  window.addEventListener('mouseup', () => {
+    s.dragging = false; wrap.style.cursor = 'grab';
+  });
+
+  // touch pinch + drag
+  let lastDist = null;
+  wrap.addEventListener('touchstart', e => {
+    if (e.touches.length === 1) {
+      s.dragging = true;
+      s.sx = e.touches[0].clientX - s.tx;
+      s.sy = e.touches[0].clientY - s.ty;
+    }
+  });
+  wrap.addEventListener('touchmove', e => {
+    e.preventDefault();
+    if (e.touches.length === 2) {
+      const d = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY);
+      if (lastDist) zoom(key, d / lastDist);
+      lastDist = d;
+    } else if (s.dragging && e.touches.length === 1) {
+      s.tx = e.touches[0].clientX - s.sx;
+      s.ty = e.touches[0].clientY - s.sy;
+      applyTransform(key);
+    }
+  }, { passive: false });
+  wrap.addEventListener('touchend', () => { s.dragging = false; lastDist = null; });
+
+  wrap.style.cursor = 'grab';
+  img.style.transformOrigin = 'center center';
+  img.style.transition = 'transform .05s ease';
+  applyTransform(key);
+});
+</script>
+
 <!-- ===== DATASET ===== -->
 <section class="section" id="dataset">
   <div class="container">
