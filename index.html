@@ -206,28 +206,26 @@
 </section>
 
 <script>
-(function() {
-  const files = ["AUT_Haag-12_1_T-4.png","AUT_Haag-13_1_T-15.png","AUT_Haag-18_1_T-46.png","AUT_Haag-32_1_T-8.png","AUT_Haag-33_1_T-1.png","CAN_Ottawa-25_1_T-17.png","AUT_Haag-82_1_T-1.png","GRC_NeaSmyrni-150_1_T-2.png","DEU_Heilbronn-270_1_T-13.png","DEU_Heilbronn-223_1_T-11.png","DEU_Heilbronn-179_1_T-2.png","DEU_Arnstadt-101_1_T-4.png","GRC_NeaSmyrni-147_1_T-2.png","BRA_VilaVelha-91_1_T-1.png","GRC_ArchaioLimani-39_1_T-1.png","GRC_NeaSmyrni-2_1_T-8.png","DEU_Memmingen-67_1_T-3.png","BRA_VilaVelha-60_1_T-1.png","DEU_Schwetzingen-36_1_T-2.png","DEU_Herzogenaurach-22_1_T-9.png","BRA_BeloHorizonte-14_1_T-10.png","BRA_BeloHorizonte-12_1_T-4.png","BRA_VilaVelha-66_1_T-11.png","DEU_Heilbronn-162_1_T-1.png","DEU_Heilbronn-206_1_T-2.png","DEU_Lengede-21_1_T-10.png","DEU_Weimar-45_1_T-1.png","AUT_Haag-84_1_T-5.png","DEU_Salzwedel-43_1_T-14.png","DEU_Heilbronn-138_1_T-6.png","GRC_ArchaioLimani-95_1_T-21.png","GRC_ArchaioLimani-105_1_T-10.png","GRC_ArchaioLimani-74_1_T-1.png","GRC_NeaSmyrni-158_1_T-1.png","DEU_Herzogenaurach-197_1_T-3.png","DEU_Heilbronn-163_1_T-8.png","DEU_Herzogenaurach-64_1_T-11.png","DEU_Schwetzingen-2_1_T-5.png","DEU_Heilbronn-272_1_T-4.png","AUT_Haag-30_1_T-1.png","DEU_BadAibling-1_1_T-9.png","GRC_NeaSmyrni-148_1_T-3.png","DEU_Heilbronn-7_1_T-1.png","GRC_ArchaioLimani-86_1_T-1.png","DEU_Arnstadt-96_1_T-1.png","DEU_Heilbronn-156_1_T-2.png","DEU_Heilbronn-63_1_T-10.png","GRC_NeaSmyrni-161_1_T-10.png","GRC_NeaSmyrni-13_1_T-5.png","DEU_Herzogenaurach-129_1_T-3.png","BRA_VilaVelha-70_1_T-3.png","DEU_Heilbronn-9_1_T-1.png","DEU_Heilbronn-88_1_T-3.png","DEU_Weimar-59_1_T-1.png","DEU_Heilbronn-254_1_T-2.png","BRA_BeloHorizonte-9_1_T-14.png","DEU_Herzogenaurach-74_1_T-19.png","DEU_Memmingen-188_1_T-3.png","CAN_Ottawa-49_1_T-20.png","DEU_Herzogenaurach-128_1_T-13.png","BRA_VilaVelha-48_1_T-3.png","DEU_Memmingen-97_1_T-3.png","DEU_Heilbronn-301_1_T-11.png","ECU_Quito-34_1_T-2.png","DEU_Wolfsburg-74_1_T-1.png","DEU_Herzogenaurach-106_1_T-4.png","DEU_Schwetzingen-150_1_T-9.png","DEU_Heilbronn-134_1_T-4.png","BRA_VilaVelha-33_1_T-2.png","BRA_VilaVelha-101_1_T-17.png","DEU_Heilbronn-188_1_T-4.png","GRC_ArchaioLimani-144_1_T-1.png","GRC_NeaSmyrni-123_1_T-10.png","BRA_VilaVelha-90_1_T-1.png","GRC_ArchaioLimani-46_1_T-1.png","GRC_ArchaioLimani-5_1_T-1.png","DEU_Herzogenaurach-67_1_T-19.png","DEU_Herzogenaurach-107_1_T-11.png","DEU_Bebra-39_1_T-1.png","DEU_Herzogenaurach-113_1_T-19.png","DEU_Heilbronn-98_1_T-4.png","DEU_Heilbronn-149_1_T-12.png","DEU_Heilbronn-256_1_T-3.png","BRA_VilaVelha-3_1_T-5.png","DEU_Weimar-78_1_T-1.png","DEU_Damme-57_1_T-18.png","DEU_Memmingen-175_1_T-2.png","GRC_NeaSmyrni-19_1_T-11.png","DEU_Herzogenaurach-78_1_T-10.png","DEU_Heilbronn-269_1_T-3.png","DEU_Salzwedel-28_1_T-4.png","GRC_ArchaioLimani-83_1_T-6.png","BRA_VilaVelha-117_1_T-12.png","DEU_Heilbronn-195_1_T-11.png","GRC_NeaSmyrni-162_1_T-1.png","DEU_Heilbronn-343_1_T-5.png","DEU_Herzogenaurach-175_1_T-17.png","DEU_Heilbronn-257_1_T-24.png","BRA_VilaVelha-23_1_T-10.png","DEU_Heilbronn-151_1_T-23.png"];
+const scenarioFiles = ["AUT_Haag-12_1_T-4.png","AUT_Haag-13_1_T-15.png","AUT_Haag-18_1_T-46.png","AUT_Haag-32_1_T-8.png","AUT_Haag-33_1_T-1.png","CAN_Ottawa-25_1_T-17.png","AUT_Haag-82_1_T-1.png","GRC_NeaSmyrni-150_1_T-2.png","DEU_Heilbronn-270_1_T-13.png","DEU_Heilbronn-223_1_T-11.png","DEU_Heilbronn-179_1_T-2.png","DEU_Arnstadt-101_1_T-4.png","GRC_NeaSmyrni-147_1_T-2.png","BRA_VilaVelha-91_1_T-1.png","GRC_ArchaioLimani-39_1_T-1.png","GRC_NeaSmyrni-2_1_T-8.png","DEU_Memmingen-67_1_T-3.png","BRA_VilaVelha-60_1_T-1.png","DEU_Schwetzingen-36_1_T-2.png","DEU_Herzogenaurach-22_1_T-9.png","BRA_BeloHorizonte-14_1_T-10.png","BRA_BeloHorizonte-12_1_T-4.png","BRA_VilaVelha-66_1_T-11.png","DEU_Heilbronn-162_1_T-1.png","DEU_Heilbronn-206_1_T-2.png","DEU_Lengede-21_1_T-10.png","DEU_Weimar-45_1_T-1.png","AUT_Haag-84_1_T-5.png","DEU_Salzwedel-43_1_T-14.png","DEU_Heilbronn-138_1_T-6.png","GRC_ArchaioLimani-95_1_T-21.png","GRC_ArchaioLimani-105_1_T-10.png","GRC_ArchaioLimani-74_1_T-1.png","GRC_NeaSmyrni-158_1_T-1.png","DEU_Herzogenaurach-197_1_T-3.png","DEU_Heilbronn-163_1_T-8.png","DEU_Herzogenaurach-64_1_T-11.png","DEU_Schwetzingen-2_1_T-5.png","DEU_Heilbronn-272_1_T-4.png","AUT_Haag-30_1_T-1.png","DEU_BadAibling-1_1_T-9.png","GRC_NeaSmyrni-148_1_T-3.png","DEU_Heilbronn-7_1_T-1.png","GRC_ArchaioLimani-86_1_T-1.png","DEU_Arnstadt-96_1_T-1.png","DEU_Heilbronn-156_1_T-2.png","DEU_Heilbronn-63_1_T-10.png","GRC_NeaSmyrni-161_1_T-10.png","GRC_NeaSmyrni-13_1_T-5.png","DEU_Herzogenaurach-129_1_T-3.png","BRA_VilaVelha-70_1_T-3.png","DEU_Heilbronn-9_1_T-1.png","DEU_Heilbronn-88_1_T-3.png","DEU_Weimar-59_1_T-1.png","DEU_Heilbronn-254_1_T-2.png","BRA_BeloHorizonte-9_1_T-14.png","DEU_Herzogenaurach-74_1_T-19.png","DEU_Memmingen-188_1_T-3.png","CAN_Ottawa-49_1_T-20.png","DEU_Herzogenaurach-128_1_T-13.png","BRA_VilaVelha-48_1_T-3.png","DEU_Memmingen-97_1_T-3.png","DEU_Heilbronn-301_1_T-11.png","ECU_Quito-34_1_T-2.png","DEU_Wolfsburg-74_1_T-1.png","DEU_Herzogenaurach-106_1_T-4.png","DEU_Schwetzingen-150_1_T-9.png","DEU_Heilbronn-134_1_T-4.png","BRA_VilaVelha-33_1_T-2.png","BRA_VilaVelha-101_1_T-17.png","DEU_Heilbronn-188_1_T-4.png","GRC_ArchaioLimani-144_1_T-1.png","GRC_NeaSmyrni-123_1_T-10.png","BRA_VilaVelha-90_1_T-1.png","GRC_ArchaioLimani-46_1_T-1.png","GRC_ArchaioLimani-5_1_T-1.png","DEU_Herzogenaurach-67_1_T-19.png","DEU_Herzogenaurach-107_1_T-11.png","DEU_Bebra-39_1_T-1.png","DEU_Herzogenaurach-113_1_T-19.png","DEU_Heilbronn-98_1_T-4.png","DEU_Heilbronn-149_1_T-12.png","DEU_Heilbronn-256_1_T-3.png","BRA_VilaVelha-3_1_T-5.png","DEU_Weimar-78_1_T-1.png","DEU_Damme-57_1_T-18.png","DEU_Memmingen-175_1_T-2.png","GRC_NeaSmyrni-19_1_T-11.png","DEU_Herzogenaurach-78_1_T-10.png","DEU_Heilbronn-269_1_T-3.png","DEU_Salzwedel-28_1_T-4.png","GRC_ArchaioLimani-83_1_T-6.png","BRA_VilaVelha-117_1_T-12.png","DEU_Heilbronn-195_1_T-11.png","GRC_NeaSmyrni-162_1_T-1.png","DEU_Heilbronn-343_1_T-5.png","DEU_Herzogenaurach-175_1_T-17.png","DEU_Heilbronn-257_1_T-24.png","BRA_VilaVelha-23_1_T-10.png","DEU_Heilbronn-151_1_T-23.png"];
 
+(function() {
   let idx = 0;
 
   function show(i) {
-    idx = (i + files.length) % files.length;
-    const f = files[idx];
+    idx = (i + scenarioFiles.length) % scenarioFiles.length;
+    const f = scenarioFiles[idx];
     document.getElementById('imgBEV').src   = 'homepage/commonroad_map/' + f;
     document.getElementById('imgCARLA').src = 'homepage/carla_map/' + f;
     document.getElementById('viewerName').textContent = f.replace('.png','');
-    document.getElementById('viewerCounter').textContent = (idx + 1) + ' / ' + files.length;
-    // update dots
-    document.querySelectorAll('.vdot').forEach((d, j) => d.classList.toggle('active', j === idx));
+    document.getElementById('viewerCounter').textContent = (idx + 1) + ' / ' + scenarioFiles.length;
+    document.querySelectorAll('.vdot-map').forEach((d, j) => d.classList.toggle('active', j === idx));
   }
 
-  // build dots (show 10 at a time around current)
   const dotsEl = document.getElementById('viewerDots');
-  for (let i = 0; i < files.length; i++) {
+  for (let i = 0; i < scenarioFiles.length; i++) {
     const d = document.createElement('button');
-    d.className = 'vdot';
-    d.title = files[i].replace('.png','');
+    d.className = 'vdot vdot-map';
+    d.title = scenarioFiles[i].replace('.png','');
     d.onclick = () => show(i);
     dotsEl.appendChild(d);
   }
@@ -235,7 +233,6 @@
   document.getElementById('btnPrev').onclick = () => show(idx - 1);
   document.getElementById('btnNext').onclick = () => show(idx + 1);
 
-  // keyboard nav
   document.addEventListener('keydown', e => {
     if (e.key === 'ArrowLeft')  show(idx - 1);
     if (e.key === 'ArrowRight') show(idx + 1);
@@ -329,6 +326,110 @@ function resetZoom(key) {
   img.style.transition = 'transform .05s ease';
   applyTransform(key);
 });
+</script>
+
+<!-- ===== BEHAVIOR VIDEOS ===== -->
+<section class="section" id="behaviors">
+  <div class="container">
+    <h2 class="section-title">Driving Behavior Demonstrations</h2>
+    <p class="section-subtitle">
+      For each scenario, StyleVLA generates trajectories conditioned on 5 distinct driving styles.
+      Use Prev / Next or the dots to browse all 100 scenarios.
+    </p>
+
+    <div class="video-shell">
+      <div class="viewer-header">
+        <span class="viewer-counter" id="vidCounter">1 / 100</span>
+        <span class="viewer-name" id="vidName"></span>
+      </div>
+
+      <div class="video-grid">
+        <div class="video-wrap">
+          <video id="vid-Default" muted playsinline loop controls></video>
+          <span class="behavior-tag bt-default">Default</span>
+        </div>
+        <div class="video-wrap">
+          <video id="vid-Balanced" muted playsinline loop controls></video>
+          <span class="behavior-tag bt-balanced">Balanced</span>
+        </div>
+        <div class="video-wrap">
+          <video id="vid-Comfort" muted playsinline loop controls></video>
+          <span class="behavior-tag bt-comfort">Comfort</span>
+        </div>
+        <div class="video-wrap">
+          <video id="vid-Efficiency-Sporty" muted playsinline loop controls></video>
+          <span class="behavior-tag bt-sporty">Sporty</span>
+        </div>
+        <div class="video-wrap">
+          <video id="vid-Safety-Conservative" muted playsinline loop controls></video>
+          <span class="behavior-tag bt-safety">Safety</span>
+        </div>
+      </div>
+
+      <!-- play / stop / reset controls -->
+      <div class="video-action-bar">
+        <button class="vab-btn vab-play"  onclick="vidPlayAll()">&#9654; Play All</button>
+        <button class="vab-btn vab-stop"  onclick="vidStopAll()">&#9646;&#9646; Stop All</button>
+        <button class="vab-btn vab-reset" onclick="vidResetAll()">&#8635; Reset All</button>
+      </div>
+
+      <div class="viewer-nav">
+        <button class="viewer-btn" id="vidPrev">&#8592; Prev</button>
+        <div class="viewer-dots" id="vidDots"></div>
+        <button class="viewer-btn" id="vidNext">Next &#8594;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+const _vidBehaviors = ['Default','Balanced','Comfort','Efficiency-Sporty','Safety-Conservative'];
+
+function vidPlayAll() {
+  _vidBehaviors.forEach(b => document.getElementById('vid-' + b).play());
+}
+function vidStopAll() {
+  _vidBehaviors.forEach(b => document.getElementById('vid-' + b).pause());
+}
+function vidResetAll() {
+  _vidBehaviors.forEach(b => {
+    const v = document.getElementById('vid-' + b);
+    v.pause();
+    v.currentTime = 0;
+  });
+}
+
+(function() {
+  let vidIdx = 0;
+
+  function showVid(i) {
+    vidIdx = (i + scenarioFiles.length) % scenarioFiles.length;
+    const base = scenarioFiles[vidIdx].replace('.png','');
+    document.getElementById('vidName').textContent = base;
+    document.getElementById('vidCounter').textContent = (vidIdx + 1) + ' / ' + scenarioFiles.length;
+    _vidBehaviors.forEach(b => {
+      const v = document.getElementById('vid-' + b);
+      v.pause();
+      v.src = 'homepage/2d/' + base + '_' + b + '.mp4';
+      v.load();
+    });
+    document.querySelectorAll('.vdot-vid').forEach((d, j) => d.classList.toggle('active', j === vidIdx));
+  }
+
+  const dotsEl = document.getElementById('vidDots');
+  for (let i = 0; i < scenarioFiles.length; i++) {
+    const d = document.createElement('button');
+    d.className = 'vdot vdot-vid';
+    d.title = scenarioFiles[i].replace('.png','');
+    d.onclick = () => showVid(i);
+    dotsEl.appendChild(d);
+  }
+
+  document.getElementById('vidPrev').onclick = () => showVid(vidIdx - 1);
+  document.getElementById('vidNext').onclick = () => showVid(vidIdx + 1);
+
+  showVid(0);
+})();
 </script>
 
 <!-- ===== DATASET ===== -->
