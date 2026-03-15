@@ -30,8 +30,8 @@ body {
 }
 
 /* ===== LAYOUT ===== */
-.container       { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-.container.narrow{ max-width: 780px; }
+.container       { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+.container.narrow{ max-width: 1000px; }
 
 .section         { padding: 5rem 0; }
 .section-alt     { background: var(--surface); }
@@ -46,7 +46,7 @@ body {
 .section-subtitle {
   text-align: center;
   color: var(--text-muted);
-  max-width: 680px;
+  max-width: 780px;
   margin: 0 auto 2.5rem;
 }
 .subsection-title {
@@ -135,6 +135,51 @@ body {
 .btn-badge    { background: rgba(255,255,255,0.25); font-size: 0.7rem; font-weight: 600;
                 padding: 1px 6px; border-radius: 999px; margin-left: 6px; }
 
+/* ===== DEMO LEGEND ===== */
+.demo-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.2rem;
+  padding: 0.55rem 1.6rem;
+  background: #dbeafe;
+  border-radius: 999px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1e293b;
+}
+.demo-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.legend-goal {
+  color: #16a34a;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.legend-line {
+  display: inline-block;
+  width: 28px;
+  height: 2.5px;
+  border-radius: 2px;
+}
+.legend-gt   { background: #2563eb; }
+.legend-pred { background: #dc2626; }
+.legend-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-left: -4px;
+}
+.legend-dot-gt   { background: #2563eb; }
+.legend-dot-pred { background: #dc2626; }
+
 /* ===== ABSTRACT ===== */
 .abstract-text {
   font-size: 1.05rem;
@@ -146,7 +191,7 @@ body {
 
 /* ===== FRAMEWORK FIGURE ===== */
 .figure-section { background: var(--surface); padding: 3.5rem 0; }
-.figure-section .container { max-width: 1280px; }
+.figure-section .container { max-width: 1200px; }
 
 .paper-figure {
   display: flex;
@@ -157,7 +202,7 @@ body {
 }
 .paper-figure img {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1200px;
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border);
@@ -344,7 +389,7 @@ body {
 
 /* ===== DATASET SAMPLES VIEWER ===== */
 .viewer-shell {
-  max-width: 860px;
+  max-width: 1000px;
   margin: 2rem auto 0;
   background: #fff;
   border: 1px solid var(--border);
@@ -490,7 +535,7 @@ body {
   overflow: hidden;
 }
 #samples .container {
-  max-width: 1600px !important;
+  max-width: 1200px !important;
   padding: 0 1rem;
 }
 .samples-divider {
